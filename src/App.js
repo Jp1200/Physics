@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Grommet, Button, Heading } from 'grommet';
 import {Notification} from 'grommet-icons';
+import ObjectRender from './ObjectRender'
 const theme = {
   global: {
        colors: {
@@ -27,15 +28,38 @@ const AppBar = (props) => (
     {...props}
   />
 );
+const AnnimationBox = (props)=> (
+  <Box
+    border={{ color: '#228BE6', size: 'large' }} pad='xlarge'
+
+    align='center'
+    basis='auto'
+
+    style={{zIndex: '1'}}
+    {...props}
+
+  />
+);
+
 function App() {
   return (
+    <div className='navbar'>
     <Grommet theme={theme}>
         <AppBar>
-          <Heading level='3' margin='none'>Vintage</Heading>
+          <Heading level='3' margin='none' >Annimations</Heading>
           <Button icon={<Notification />} onClick={() => {}} />
 
         </AppBar>
+
     </Grommet>
+    <div className='object'>
+      <AnnimationBox>
+        <ObjectRender/>
+      </AnnimationBox>
+    </div>
+    </div>
+
+
   );
 }
 
